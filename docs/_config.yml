@@ -1,0 +1,12 @@
+theme: jekyll-theme-minimal
+#github: [metadata] 
+repository: warrensbox/aws-find
+logo: /assets/img/logo.png
+title: AWS Instance Finder
+
+meta_description: Lookup AWS instances' IP address and ID by their AWS tag name 
+
+
+show_downloads: true
+
+#github: [metadata] 
