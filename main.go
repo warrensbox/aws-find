@@ -8,13 +8,15 @@ import (
 	session "github.com/aws/aws-sdk-go/aws/session"
 	getopt "github.com/pborman/getopt"
 	lib "github.com/warrensbox/aws-find/lib"
+	"github.com/warrensbox/aws-find/modal"
 )
 
 func main() {
 
 	helpFlag := getopt.BoolLong("help", 'h', "displays help message")
 	awsRegion := getopt.StringLong("region", 'r', "us-east-1", "AWS Region")
-	awsEnv := getopt.StringLong("env", 'e', "", "AWS Environment")
+	tagName := getopt.StringLong("tag", 't', "", "AWS Tag")
+	tagValue := getopt.StringLong("value", 'v', "", "AWS Value")
 
 	getopt.Parse()
 
@@ -23,12 +25,17 @@ func main() {
 	awsSession, err := session.NewSession(config)
 	lib.CheckError("Can't create aws session", err)
 
+	t := &modal.InstanceProfile{
+		TagName:  *tagName,
+		TagValue: *tagValue,
+	}
+
 	ch := make(chan string)
 
 	if *helpFlag {
 		usageMessage()
-	} else if *awsEnv != "" {
-		go lib.FindEC2(awsSession, *awsEnv, ch)
+	} else if *tagName != "" {
+		go lib.FindEC2(awsSession, t, ch)
 		<-ch
 	}
 

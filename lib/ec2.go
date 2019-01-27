@@ -9,21 +9,27 @@ import (
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/ec2"
 	"github.com/jedib0t/go-pretty/table"
+	"github.com/warrensbox/aws-find/modal"
 )
 
-func FindEC2(sess *session.Session, envName string, ec2chan chan string) {
+func FindEC2(sess *session.Session, id *modal.InstanceProfile, ec2chan chan string) {
 
-	//fmt.Println(sess)
+	tagName := id.TagName
+	tagValue := id.TagValue
+
+	tag := fmt.Sprintf("tag:%s", "environment")
+
+	if tagName != "" {
+		tag = fmt.Sprintf("tag:%s", tagName)
+	}
 
 	svc := ec2.New(sess)
-	//svc := ec2.New(sess, "us-east-1")
-
 	params := &ec2.DescribeInstancesInput{
 		Filters: []*ec2.Filter{
 			{
-				Name: aws.String("tag:environment"),
+				Name: aws.String(tag),
 				Values: []*string{
-					aws.String(strings.Join([]string{"*", envName, "*"}, "")),
+					aws.String(strings.Join([]string{"*", tagValue, "*"}, "")),
 				},
 			},
 		},
