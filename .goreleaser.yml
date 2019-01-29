@@ -9,8 +9,6 @@ builds:
       - windows
       - darwin
       - linux
-    goarch:
-      - amd64
 checksum:
   name_template: '{{ .ProjectName }}_{{.Env.RELEASE_VERSION}}_checksums.txt'
 changelog:
@@ -25,7 +23,6 @@ archive:
     darwin: darwin
     linux: linux
     386: 386
-    amd64: amd64
   format_overrides:
   - goos: windows
     format: zip
