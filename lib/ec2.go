@@ -41,7 +41,7 @@ func FindEC2(sess *session.Session, id *modal.InstanceProfile, ch chan string) {
 	var instances [][]string
 	reservations := resp.Reservations
 
-	fmt.Println(reservations)
+	//fmt.Println(reservations)
 	if len(reservations) == 0 {
 		fmt.Println("No instances found with the given tag name and value. Try again...")
 		ch <- "No instances found..."
