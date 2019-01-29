@@ -6,7 +6,7 @@
 ### Homebrew
 
 ```ruby
-brew upgrade warrensbox/tap/tfswitch
+brew upgrade warrensbox/tap/awsfind
 ```
 ### Linux
 
@@ -21,14 +21,14 @@ curl -L https://raw.githubusercontent.com/warrensbox/terraform-switcher/release/
 ### Homebrew
 
 ```ruby
-brew uninstall warrensbox/tap/tfswitch
+brew uninstall warrensbox/tap/awsfind
 ```
 ### Linux
 
 Rerun:
 
 ```sh
-rm /usr/local/bin/tfswitch
+rm /usr/local/bin/awsfind
 ```
 
 ## Troubleshoot:
@@ -45,7 +45,7 @@ install: can't change permissions of /usr/local/bin: Operation not permitted
 ```ruby
 "Unable to create symlink. You must have SUDO privileges"
 ```
-You probably need to have **sudo** privileges to install *tfswitch*.
+You probably need to have **sudo** privileges to install *awsfind*.
 
 [Back to top](#upgrade)    
 [Back to main](index)
