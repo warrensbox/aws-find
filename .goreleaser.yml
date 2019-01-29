@@ -8,7 +8,6 @@ builds:
     goos:
       - windows
       - darwin
-      - linux
 checksum:
   name_template: '{{ .ProjectName }}_{{.Env.RELEASE_VERSION}}_checksums.txt'
 changelog:
@@ -21,8 +20,6 @@ archive:
   name_template: '{{ .ProjectName }}_{{.Env.RELEASE_VERSION}}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}'
   replacements:
     darwin: darwin
-    linux: linux
-    386: 386
   format_overrides:
   - goos: windows
     format: zip
