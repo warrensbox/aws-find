@@ -9,4 +9,6 @@ meta_description: Lookup AWS instances' IP address and ID by their AWS tag name
 
 show_downloads: true
 
+exclude: [vendor]
+
 #github: [metadata] 

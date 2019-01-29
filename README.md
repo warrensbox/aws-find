@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/warrensbox/terraform-switcher.svg?branch=master)](https://travis-ci.org/warrensbox/terraform-switcher)
-[![Go Report Card](https://goreportcard.com/badge/github.com/warrensbox/terraform-switcher)](https://goreportcard.com/report/github.com/warrensbox/terraform-switcher)
-[![CircleCI](https://circleci.com/gh/warrensbox/terraform-switcher/tree/master.svg?style=shield&circle-token=55ddceec95ff67eb38269152282f8a7d761c79a5)](https://circleci.com/gh/warrensbox/terraform-switcher)
+[![Build Status](https://travis-ci.org/warrensbox/aws-find.svg?branch=master)](https://travis-ci.org/warrensbox/aws-find)
+[![Go Report Card](https://goreportcard.com/badge/github.com/warrensbox/aws-find)](https://goreportcard.com/report/github.com/warrensbox/aws-find)
+[![CircleCI](https://circleci.com/gh/warrensbox/aws-find/tree/master.svg?style=shield&circle-token=55ddceec95ff67eb38269152282f8a7d761c79a5)](https://circleci.com/gh/warrensbox/aws-find)
 
 # AWS Find
 
@@ -13,7 +13,7 @@ If you do not have a particular version of terraform installed, `tfswitch` will 
 The installation is minimal and easy. 
 Once installed, simply select the version you require from the dropdown and start using terraform. 
 
-See installation guide here: [tfswitch installation](https://warrensbox.github.io/terraform-switcher/)
+See installation guide here: [tfswitch installation](https://warrensbox.github.io/aws-find/)
 
 ## Installation
 
@@ -33,12 +33,12 @@ brew install warrensbox/tap/tfswitch
 Installation for other linux operation systems.
 
 ```sh
-curl -L https://raw.githubusercontent.com/warrensbox/terraform-switcher/release/install.sh | bash
+curl -L https://raw.githubusercontent.com/warrensbox/aws-find/release/install.sh | bash
 ```
 
 ### Install from source
 
-Alternatively, you can install the binary from source [here](https://github.com/warrensbox/terraform-switcher/releases) 
+Alternatively, you can install the binary from source [here](https://github.com/warrensbox/aws-find/releases) 
 
 ## How to use:
 ### Use dropdown menu to select version
@@ -59,12 +59,12 @@ The most recently selected versions are presented at the top of the dropdown.
 
 ## Additional Info
 
-See how to *upgrade*, *uninstall*, *troubleshoot* here:[More info](https://warrensbox.github.io/terraform-switcher/additional)
+See how to *upgrade*, *uninstall*, *troubleshoot* here:[More info](https://warrensbox.github.io/aws-find/additional)
 
 
 ## Issues
 
-Please open  *issues* here: [New Issue](https://github.com/warrensbox/terraform-switcher/issues)
+Please open  *issues* here: [New Issue](https://github.com/warrensbox/aws-find/issues)
 
 
 
