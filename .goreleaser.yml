@@ -11,13 +11,6 @@ builds:
       - linux
     goarch:
       - amd64
-      - arm64
-      - arm
-  - ignore:
-      - goos: darwin
-        goarch: 386
-      - goos: linux
-        goarch: amd64
 checksum:
   name_template: '{{ .ProjectName }}_{{.Env.RELEASE_VERSION}}_checksums.txt'
 changelog:
@@ -29,11 +22,10 @@ changelog:
 archive:
   name_template: '{{ .ProjectName }}_{{.Env.RELEASE_VERSION}}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}'
   replacements:
-    darwin: Darwin
-    linux: Linux
-    windows: Windows
-    386: i386
-    amd64: x86_64
+    darwin: darwin
+    linux: linux
+    386: 386
+    amd64: amd64
   format_overrides:
   - goos: windows
     format: zip
