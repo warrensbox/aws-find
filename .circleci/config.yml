@@ -52,7 +52,8 @@ jobs:
             git config user.name "warrensbox"
             cd docs; bundle install --path vendor/bundler; bundle exec jekyll build -c _config.yml; cd ..
             git checkout master
-            git merge release
+            git add .
+            git commit -m "Pushing ${CIRCLE_BUILD_NUM} from circle ci"
             git push origin master
 
   release:
