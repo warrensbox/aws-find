@@ -55,8 +55,11 @@ func main() {
 
 	config := &aws.Config{Region: aws.String(*awsRegion)}
 
-	sess, err := session.NewSession(config)
-	lib.CheckError("Can't create aws session", err)
+	//sess, err := session.NewSession(config)
+
+	session := session.Must(session.NewSession(config))
+	//svc := ssm.New(session)
+	//lib.CheckError("Can't create aws session", err)
 
 	t := &modal.InstanceProfile{
 		TagName:  *tagName,
@@ -68,7 +71,7 @@ func main() {
 	if *versionFlag {
 		fmt.Printf("\nVersion: %v\n", version)
 	} else {
-		go lib.FindEC2(sess, t, ch)
+		go lib.FindEC2(session, t, ch)
 		<-ch
 	}
 
