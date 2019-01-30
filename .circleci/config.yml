@@ -66,6 +66,7 @@ jobs:
           command: |
             pwd
             ls
+            go build main.go
             set +e
             source version
             export RELEASE_VERSION; 
