@@ -75,7 +75,12 @@ jobs:
             export RELEASE_VERSION;
             echo $RELEASE_VERSION
             echo $GITHUB_TOKEN
-          
+
+            mkdir -p /home/circleci/bin
+            curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+            export PATH="/home/warrensbox/bin:${PATH}"
+            dep
+
             go get -v -t -d ./...
             git config user.email "warren.veerasingam@gmail.com"
             git config user.name "warrensbox"
