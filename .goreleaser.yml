@@ -3,14 +3,15 @@
 builds:
   - ldflags:
     - -s -w -X "main.version={{.Env.RELEASE_VERSION}}"
-  - main: main.go
+  - main: ./main.go
     binary: awsfind
     goos:
-      - windows
       - darwin
-      - linux
     goarch:
       - amd64
+    ignore:
+      - goos: linux
+        goarch: amd64
 checksum:
   name_template: '{{ .ProjectName }}_{{.Env.RELEASE_VERSION}}_checksums.txt'
 changelog:
@@ -23,9 +24,6 @@ archive:
   name_template: '{{ .ProjectName }}_{{.Env.RELEASE_VERSION}}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}'
   replacements:
     darwin: darwin
-    linux: linux
-    386: 386
-    amd64: amd64
   format_overrides:
   - goos: windows
     format: zip
