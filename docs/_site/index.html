@@ -9,7 +9,7 @@
         <meta name="description" content="">
     
 <!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>AWS Instance Finder | Lookup AWS instances’ IP address and ID by their AWS tag name</title>
+<title>AWS Instance Finder | Lookup AWS instances’ IP address, ID and more by their AWS tag name</title>
 <meta name="generator" content="Jekyll v3.7.3" />
 <meta property="og:title" content="AWS Instance Finder" />
 <meta property="og:locale" content="en_US" />
@@ -19,7 +19,7 @@
 <meta property="og:url" content="http://localhost:4000/" />
 <meta property="og:site_name" content="AWS Instance Finder" />
 <script type="application/ld+json">
-{"name":"AWS Instance Finder","description":"Lookup AWS instances’ IP address and ID by their AWS tag name","@type":"WebSite","url":"http://localhost:4000/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/logo.png"}},"headline":"AWS Instance Finder","@context":"http://schema.org"}</script>
+{"name":"AWS Instance Finder","description":"Lookup AWS instances’ IP address, ID and more by their AWS tag name","@type":"WebSite","url":"http://localhost:4000/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/logo.png"}},"headline":"AWS Instance Finder","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" href="/assets/css/style.css?v=f15c8b8eeec8210898235f2213725eecaf9b510c">
@@ -47,7 +47,7 @@
           <img align="middle" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/logo.png" alt="Logo" />
         </p>
 
-        <p style="text-align: center">Lookup AWS instances' IP address and ID by their AWS tag name</p>
+        <p style="text-align: center">Lookup AWS instances' IP address, ID and more by their AWS tag name</p>
         <!-- <p>Written in go</p> -->
         <img src="https://travis-ci.org/warrensbox/terraform-switcher.svg?branch=master" alt="Travis" />
         <img src="https://goreportcard.com/badge/github.com/warrensbox/terraform-switcher" alt="Go Report" />
@@ -66,7 +66,7 @@
 
       <h1 id="aws-instance-finder">AWS Instance Finder</h1>
 
-<p>The <code class="highlighter-rouge">aws-find</code> command line tool lets you lookup AWS instances’ IP address and ID by their tag name. 
+<p>The <code class="highlighter-rouge">aws-find</code> command line tool lets you lookup AWS instances’ IP address, ID and more by their tag name. 
 Once installed, the <code class="highlighter-rouge">aws-find</code> requires the tag name as an argument to the command <a href="#how-to-use">see example</a>.</p>
 
 <hr />
@@ -97,19 +97,27 @@ Once installed, the <code class="highlighter-rouge">aws-find</code> requires the
 
 <h3 id="how-to-use">How to use</h3>
 
-<p><img align="center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/awsfind.gif" alt="drawing" style="width: 480px;" /></p>
+<p><img align="center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/awsfindemo.gif" alt="drawing" style="width: 480px;" /></p>
 
 <ol>
-  <li>You can switch between different versions of terraform by typing the command <code class="highlighter-rouge">awsfind</code> on your terminal.</li>
-  <li>Select the version of terraform you require by using the up and down arrow.</li>
-  <li>Hit <strong>Enter</strong> to select the desired version</li>
+  <li>You can pass the -t of --tag for the tag name parameter</li>
+  <li>You can pass the -n of --name for the tag name parameter</li>
+  <li>Hit <strong>Enter</strong> to see the list of instances</li>
+</ol>
+
+<p><img align="center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/awsfindemo1.gif" alt="drawing" style="width: 480px;" /></p>
+
+<ol>
+  <li>Optionally, you don't need to pass any parameters</li>
+  <li>In this case, you will see the list of all the instances in your region</li>
+  <li>Hit <strong>Enter</strong> to see the list of instances</li>
 </ol>
 
 <hr />
 
 <h2 id="issues">Issues</h2>
 
-<p>Please open  <em>issues</em> here: <a href="https://github.com/warrensbox/terraform-switcher/issues" target="_blank">New Issue</a></p>
+<p>Please open  <em>issues</em> here: <a href="https://github.com/warrensbox/aws-find/issues" target="_blank">New Issue</a></p>
 
 <hr />
 
@@ -117,12 +125,12 @@ Once installed, the <code class="highlighter-rouge">aws-find</code> requires the
 <a href="additional">Additional Info</a></p>
 
       
-      <p><small>VERSION: . This project is maintained by <a href="http://github.com/warrensbox">warrensbox</a></small></p>
+      <p><small>This project is maintained by <a href="http://github.com/warrensbox">warrensbox</a></small></p>
       
       </section>
       <footer>
         <!-- <p><small>View other products &mdash; by <a href="http://warren.veerasingam.com/#about_me" target="_blank">Warren Veerasingam</a></small></p> -->
-        <p><small>VERSION: . This project is maintained by <a href="http://github.com/warrensbox">warrensbox</a></small></p>
+        <p><small>This project is maintained by <a href="http://github.com/warrensbox">warrensbox</a></small></p>
       </footer>
     </div>
     <script src="/assets/js/scale.fix.js"></script>
