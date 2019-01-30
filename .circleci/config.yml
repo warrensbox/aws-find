@@ -89,24 +89,9 @@ workflows:
   build_and_test:
     jobs:
       - build
-      - test-ubuntu:
-          requires:
-            - build
-      - test-alpine:
-          requires:
-            - build
-      - develop-master:
-          requires:
-            - test-ubuntu
-            - test-alpine
-          filters:
-            branches:
-              only: 
-              - master
-              - release
       - release:
           requires:
-            - develop-master
+            - build
           filters:
             branches:
               only: 
