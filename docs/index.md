@@ -1,7 +1,7 @@
 # AWS Instance Finder 
 
-The `aws-find` command line tool lets you lookup AWS instances' IP address and ID by their tag name. 
-Once installed, the `aws-find` requires the tag name as an argument to the command [see example](#how-to-use). 
+The `aws-find` command line tool lets you lookup AWS instances' IP address other information by their tag name. 
+Once installed, the `aws-find` requires the tag name and value as an argument to the command [see example](#how-to-use). 
 
 <hr>
 
@@ -15,7 +15,7 @@ Installation for MacOS is the easiest with Homebrew. [If you do not have homebre
 
 
 ```ruby
-brew install warrensbox/tap/aws-find
+brew install warrensbox/tap/awsfind
 ```
 
 ### Linux
@@ -44,7 +44,7 @@ Alternatively, you can install the binary from the source [here](https://github.
 
 ## Issues
 
-Please open  *issues* here: [New Issue](https://github.com/warrensbox/terraform-switcher/issues){:target="_blank"}
+Please open  *issues* here: [New Issue](https://github.com/warrensbox/aws-find/issues){:target="_blank"}
 
 <hr>
 
