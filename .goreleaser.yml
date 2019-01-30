@@ -8,7 +8,6 @@ builds:
     goos:
       - windows
       - darwin
-      - linux
 checksum:
   name_template: '{{ .ProjectName }}_{{.Env.RELEASE_VERSION}}_checksums.txt'
 changelog:
