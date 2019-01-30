@@ -16,7 +16,7 @@ import (
 	"fmt"
 
 	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/session"
+	session "github.com/aws/aws-sdk-go/aws/session"
 	"github.com/warrensbox/aws-find/lib"
 	"github.com/warrensbox/aws-find/modal"
 	kingpin "gopkg.in/alecthomas/kingpin.v2"
@@ -55,8 +55,11 @@ func main() {
 
 	config := &aws.Config{Region: aws.String(*awsRegion)}
 
-	awsSession, err := session.NewSession(config)
-	lib.CheckError("Can't create aws session", err)
+	//sess, err := session.NewSession(config)
+
+	session := session.Must(session.NewSession(config))
+	//svc := ssm.New(session)
+	//lib.CheckError("Can't create aws session", err)
 
 	t := &modal.InstanceProfile{
 		TagName:  *tagName,
@@ -68,7 +71,7 @@ func main() {
 	if *versionFlag {
 		fmt.Printf("\nVersion: %v\n", version)
 	} else {
-		go lib.FindEC2(awsSession, t, ch)
+		go lib.FindEC2(session, t, ch)
 		<-ch
 	}
 

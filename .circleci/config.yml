@@ -64,6 +64,7 @@ jobs:
       - checkout
       - run: 
           command: |
+            ls
             set +e
             source version
             export RELEASE_VERSION; 
