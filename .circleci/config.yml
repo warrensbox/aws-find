@@ -11,25 +11,28 @@ jobs:
 
     steps:
       - checkout
-      - run: go get -v -t -d ./...
-      - run: go vet -tests=false ./...
-      - run: go test -v ./...
-      - run: mkdir -p build
-      - run: go build -v -o build/awsfind
-      - run: source version
-      - run: export RELEASE_VERSION; 
-      - run: RELEASE_VERSION=$RELEASE_VERSION.${CIRCLE_BUILD_NUM}
-      - run: export RELEASE_VERSION;
-      - run: echo $RELEASE_VERSION
-      - run: echo $GITHUB_TOKEN
-      - run: mkdir -p /home/circleci/bin
-      - run: curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
-      - run: export PATH="/home/warrensbox/bin:${PATH}"
-      - run: git config user.email "warren.veerasingam@gmail.com"
-      - run: git config user.name "warrensbox"
-      - run: git tag -a ${RELEASE_VERSION} -m "Release Version"
-      - run: git push origin ${RELEASE_VERSION}
-      - run: curl -L https://git.io/goreleaser | VERSION=v0.76.1 bash
+      - run: 
+        command: |    
+          set +e   
+          go get -v -t -d ./...
+          go vet -tests=false ./...
+          go test -v ./...
+          mkdir -p build
+          go build -v -o build/awsfind
+          source version
+          export RELEASE_VERSION; 
+          RELEASE_VERSION=$RELEASE_VERSION.${CIRCLE_BUILD_NUM}
+          export RELEASE_VERSION;
+          echo $RELEASE_VERSION
+          echo $GITHUB_TOKEN
+          mkdir -p /home/circleci/bin
+          curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+          export PATH="/home/warrensbox/bin:${PATH}"
+          git config user.email "warren.veerasingam@gmail.com"
+          git config user.name "warrensbox"
+          git tag -a ${RELEASE_VERSION} -m "Release Version"
+          git push origin ${RELEASE_VERSION}
+          curl -L https://git.io/goreleaser | VERSION=v0.76.1 bash
 
       - persist_to_workspace:
           root: build
