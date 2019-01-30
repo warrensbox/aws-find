@@ -64,6 +64,7 @@ jobs:
       - checkout
       - run: 
           command: |
+            pwd
             ls
             set +e
             source version
