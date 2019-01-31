@@ -5,7 +5,7 @@
 
 # AWS Find
 
-<img style="text-allign:center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/smallerlogo.png" alt="drawing" width="120" height="130"/>
+<img style="text-allign:center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/smallerlogo.png" alt="drawing" width="100" height="130"/>
 
 <!-- ![gopher](https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/awsfind/logo.png =100x20) -->
 
