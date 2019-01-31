@@ -20,7 +20,7 @@
 {"headline":"AWS Instance Finder","url":"/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/assets/img/logo.png"}},"name":"AWS Instance Finder","description":"Lookup AWS instances’ IP address and ID by their AWS tag name","@type":"WebSite","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=22f059fc58dc3b105d3e7ce06176ca878087f16b">
+    <link rel="stylesheet" href="/assets/css/style.css?v=34d903c4c5195c11ac29be7dda0386e5b0eba573">
     <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
@@ -95,12 +95,20 @@ Once installed, the <code class="highlighter-rouge">aws-find</code> requires the
 
 <h3 id="how-to-use">How to use</h3>
 
-<p><img align="center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/awsfind.gif" alt="drawing" style="width: 480px;" /></p>
+<p><img align="center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/awsfindemo.gif" alt="drawing" style="width: 480px;" /></p>
 
 <ol>
-  <li>You can switch between different versions of terraform by typing the command <code class="highlighter-rouge">awsfind</code> on your terminal.</li>
-  <li>Select the version of terraform you require by using the up and down arrow.</li>
-  <li>Hit <strong>Enter</strong> to select the desired version</li>
+  <li>You can pass parameters to your<code class="highlighter-rouge">awsfind command</code> on your terminal.</li>
+  <li>Pass -t or --tag for the tag name. And, -n and --name for the tag value.</li>
+  <li>Hit <strong>Enter</strong> to see the list of instaces</li>
+</ol>
+
+<p><img align="center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/awsfindemo1.gif" alt="drawing" style="width: 480px;" /></p>
+
+<ol>
+  <li>Optionally, you don't have to pass any parameters to see the list of all the instances in region.</li>
+  <li>Pass -r or --region to specify another region</li>
+  <li>Hit <strong>Enter</strong> to see the list of instaces</li>
 </ol>
 
 <hr />

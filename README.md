@@ -42,20 +42,17 @@ Alternatively, you can install the binary from source [here](https://github.com/
 
 ## How to use:
 ### Use dropdown menu to select version
-<img src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/awsfind/awsfind.gif" alt="drawing" style="width: 180px;"/>
+<img align="center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/awsfindemo.gif" alt="drawing" style="width: 480px;" /> 
 
-1.  You can switch between different versions of terraform by typing the command `awsfind` on your terminal. 
-2.  Select the version of terraform you require by using the up and down arrow.
-3.  Hit **Enter** to select the desired version.
+1. You can pass parameters to your `awsfind` command on your terminal. 
+2. Pass -t or --tag for the tag name. And, -n and --name for the tag value. 
+3. Hit **Enter** to see the list of instaces 
 
-The most recently selected versions are presented at the top of the dropdown.
+ <img align="center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/awsfindemo1.gif" alt="drawing" style="width: 480px;" /> 
 
-### Supply version on command line
-<img src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/awsfind/awsfind-v4.gif" alt="drawing" style="width: 170px;"/>
-
-1. You can also supply the desired version as an argument on the command line.
-2. For example, `awsfind 0.10.5` for version 0.10.5 of terraform.
-3. Hit **Enter** to switch.
+1. Optionally, you don't have to pass any parameters to see the list of all the instances in region.</li>
+2. Pass -r or --region to specify another region</li>
+3. Hit **Enter** to see the list of instaces 
 
 ## Additional Info
 
