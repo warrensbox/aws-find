@@ -4,14 +4,12 @@
 
 # AWS Find
 
-<img style="text-allign:center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/awsfind/smallerlogo.png" alt="drawing" width="120" height="130"/>
+<img style="text-allign:center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/smallerlogo.png" alt="drawing" width="120" height="130"/>
 
 <!-- ![gopher](https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/awsfind/logo.png =100x20) -->
 
-The `awsfind` command line tool lets you switch between different versions of [terraform](https://www.terraform.io/). 
-If you do not have a particular version of terraform installed, `awsfind` will download the version you desire.
-The installation is minimal and easy. 
-Once installed, simply select the version you require from the dropdown and start using terraform. 
+The `aws-find` command line tool lets you lookup AWS instances' IP address and other information by their tag name. 
+Once installed, the `aws-find` lets you provide the tag name and value as an argument to the command [see example](#how-to-use). 
 
 See installation guide here: [awsfind installation](https://warrensbox.github.io/aws-find/)
 

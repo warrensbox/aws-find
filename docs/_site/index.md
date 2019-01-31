@@ -1,7 +1,7 @@
 # AWS Instance Finder 
 
-The `aws-find` command line tool lets you lookup AWS instances' IP address other information by their tag name. 
-Once installed, the `aws-find` requires the tag name and value as an argument to the command [see example](#how-to-use). 
+The `aws-find` command line tool lets you lookup AWS instances' IP address and other information by their tag name. 
+Once installed, the `aws-find` lets you provide the tag name and value as an argument to the command [see example](#how-to-use). 
 
 <hr>
 
