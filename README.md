@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.org/warrensbox/aws-find.svg?branch=master)](https://travis-ci.org/warrensbox/aws-find)
 [![Go Report Card](https://goreportcard.com/badge/github.com/warrensbox/aws-find)](https://goreportcard.com/report/github.com/warrensbox/aws-find)
-[![CircleCI](https://circleci.com/gh/warrensbox/aws-find/tree/master.svg?style=shield&circle-token=55ddceec95ff67eb38269152282f8a7d761c79a5)](https://circleci.com/gh/warrensbox/aws-find)
+[![CircleCI](https://circleci.com/gh/warrensbox/aws-find/tree/release.svg?style=shield&circle-token=518d496e953ed4d63075c0fd84b7bac7af68ac7f)](https://circleci.com/gh/warrensbox/aws-find/tree/release)
+
 
 # AWS Find
 
