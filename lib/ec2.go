@@ -60,7 +60,6 @@ func FindEC2(sess *session.Session, id *modal.InstanceProfile, ch chan string) {
 			arr = append(arr, *w.InstanceId)                   //InstanceID
 			arr = append(arr, *w.State.Name)                   //State
 			arr = append(arr, *w.PrivateIpAddress)             //Private IP
-			arr = append(arr, *w.PublicIpAddress)              //Public IP
 			arr = append(arr, *w.InstanceType)                 //instance type
 			arr = append(arr, *w.Placement.AvailabilityZone)   //AZ zone
 			profile := w.IamInstanceProfile                    //IAMRole
@@ -87,9 +86,9 @@ func printInstance(instances [][]string) string {
 		t.AppendRow([]interface{}{"Nothing found"})
 		return "No instances found..."
 	} else {
-		t.AppendHeader(table.Row{"#", "Name", "Instance ID", "State", "Private IP", "Public IP", "Type", "AZ Zone", "Role"})
+		t.AppendHeader(table.Row{"#", "Name", "Instance ID", "State", "Private IP", "Type", "AZ Zone", "Role"})
 		for _, profile := range instances {
-			t.AppendRow([]interface{}{profile[0], profile[1], profile[2], profile[3], profile[4], profile[5], profile[6], profile[7], profile[8]})
+			t.AppendRow([]interface{}{profile[0], profile[1], profile[2], profile[3], profile[4], profile[5], profile[6], profile[7]})
 		}
 		t.SetStyle(table.StyleLight)
 		t.Render()
