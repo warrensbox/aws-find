@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title> AWS Instance Finder | aws-find </title>
+    <title> AWS Instance Finder | awsfind </title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,20 +9,18 @@
         <meta name="description" content="">
     
 <!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>AWS Instance Finder | Lookup AWS instances’ IP address, ID and more by their AWS tag name</title>
+<title>AWS Instance Finder | Lookup AWS instances’ IP address and ID by their AWS tag name</title>
 <meta name="generator" content="Jekyll v3.7.3" />
 <meta property="og:title" content="AWS Instance Finder" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Lookup AWS instances’ IP address and ID by their AWS tag name" />
 <meta property="og:description" content="Lookup AWS instances’ IP address and ID by their AWS tag name" />
-<link rel="canonical" href="http://localhost:4000/" />
-<meta property="og:url" content="http://localhost:4000/" />
 <meta property="og:site_name" content="AWS Instance Finder" />
 <script type="application/ld+json">
-{"name":"AWS Instance Finder","description":"Lookup AWS instances’ IP address, ID and more by their AWS tag name","@type":"WebSite","url":"http://localhost:4000/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/logo.png"}},"headline":"AWS Instance Finder","@context":"http://schema.org"}</script>
+{"headline":"AWS Instance Finder","url":"/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/assets/img/logo.png"}},"name":"AWS Instance Finder","description":"Lookup AWS instances’ IP address and ID by their AWS tag name","@type":"WebSite","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=f15c8b8eeec8210898235f2213725eecaf9b510c">
+    <link rel="stylesheet" href="/assets/css/style.css?v=f6babfa361212e4cc5dd0faba2091eff74508d67">
     <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
@@ -40,14 +38,14 @@
   <body>
     <div class="wrapper">
       <header>
-        <!-- <h1 style="font-size:25px;"><a href="http://localhost:4000/">AWS Instance Finder</a></h1> -->
-        <!-- <h1 style="font-size:25px; text-align: center"><a href="http://localhost:4000/">awsfind</a></h1> -->
+        <!-- <h1 style="font-size:25px;"><a href="/">AWS Instance Finder</a></h1> -->
+        <!-- <h1 style="font-size:25px; text-align: center"><a href="/">awsfind</a></h1> -->
 
         <p align="center">
           <img align="middle" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/logo.png" alt="Logo" />
         </p>
 
-        <p style="text-align: center">Lookup AWS instances' IP address, ID and more by their AWS tag name</p>
+        <p style="text-align: center">Lookup AWS instances' IP address and ID by their AWS tag name</p>
         <!-- <p>Written in go</p> -->
         <img src="https://travis-ci.org/warrensbox/terraform-switcher.svg?branch=master" alt="Travis" />
         <img src="https://goreportcard.com/badge/github.com/warrensbox/terraform-switcher" alt="Go Report" />
@@ -56,8 +54,8 @@
 
         
         <ul>
-          <li><a href="https://github.com/warrensbox/terraform-switcher/releases/download//terraform-switcher__darwin_amd64.tar.gz">Download <strong>MacOS</strong></a></li>
-          <li><a href="https://github.com/warrensbox/terraform-switcher/releases/download//terraform-switcher__linux_amd64.tar.gz">Download <strong>Linux</strong></a></li>
+          <li><a href="https://github.com/warrensbox/terraform-switcher/releases/download/0.1.215/terraform-switcher_0.1.215_darwin_amd64.tar.gz">Download <strong>MacOS</strong></a></li>
+          <li><a href="https://github.com/warrensbox/terraform-switcher/releases/download/0.1.215/terraform-switcher_0.1.215_linux_amd64.tar.gz">Download <strong>Linux</strong></a></li>
           <li><a href="https://github.com/warrensbox/terraform-switcher/releases">Releases On <strong>GitHub</strong></a></li>
         </ul>
         
@@ -66,8 +64,8 @@
 
       <h1 id="aws-instance-finder">AWS Instance Finder</h1>
 
-<p>The <code class="highlighter-rouge">aws-find</code> command line tool lets you lookup AWS instances’ IP address, ID and more by their tag name. 
-Once installed, the <code class="highlighter-rouge">aws-find</code> requires the tag name as an argument to the command <a href="#how-to-use">see example</a>.</p>
+<p>The <code class="highlighter-rouge">aws-find</code> command line tool lets you lookup AWS instances’ IP address and other information by their tag name. 
+Once installed, the <code class="highlighter-rouge">aws-find</code> requires the tag name and value as an argument to the command <a href="#how-to-use">see example</a>.</p>
 
 <hr />
 
@@ -79,7 +77,7 @@ Once installed, the <code class="highlighter-rouge">aws-find</code> requires the
 
 <p>Installation for MacOS is the easiest with Homebrew. <a href="https://brew.sh/" target="_blank">If you do not have homebrew installed, click here</a>.</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">brew</span> <span class="n">install</span> <span class="n">warrensbox</span><span class="o">/</span><span class="n">tap</span><span class="o">/</span><span class="n">aws</span><span class="o">-</span><span class="n">find</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">brew</span> <span class="n">install</span> <span class="n">warrensbox</span><span class="o">/</span><span class="n">tap</span><span class="o">/</span><span class="n">awsfind</span>
 </code></pre></div></div>
 
 <h3 id="linux">Linux</h3>
@@ -97,20 +95,20 @@ Once installed, the <code class="highlighter-rouge">aws-find</code> requires the
 
 <h3 id="how-to-use">How to use</h3>
 
-<p><img align="center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/awsfindemo.gif" alt="drawing" style="width: 480px;" /></p>
+<p><img align="center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/awsfindemo.gif" alt="drawing" style="width: 480px;" /></p>
 
 <ol>
-  <li>You can pass the -t of --tag for the tag name parameter</li>
-  <li>You can pass the -n of --name for the tag name parameter</li>
-  <li>Hit <strong>Enter</strong> to see the list of instances</li>
+  <li>You can pass parameters to your <code class="highlighter-rouge">awsfind</code> command on your terminal</li>
+  <li>Pass -t or –tag for the tag name. And, -n and –name for the tag value</li>
+  <li>Hit <strong>Enter</strong> to see the list of instaces</li>
 </ol>
 
-<p><img align="center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/awsfindemo1.gif" alt="drawing" style="width: 480px;" /></p>
+<p><img align="center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/awsfindemo1.gif" alt="drawing" style="width: 480px;" /></p>
 
 <ol>
-  <li>Optionally, you don't need to pass any parameters</li>
-  <li>In this case, you will see the list of all the instances in your region</li>
-  <li>Hit <strong>Enter</strong> to see the list of instances</li>
+  <li>Optionally, you don’t have to pass any parameters to see the list of all the instances in region</li>
+  <li>Pass -r or –region to specify another region</li>
+  <li>Hit <strong>Enter</strong> to see the list of instaces</li>
 </ol>
 
 <hr />

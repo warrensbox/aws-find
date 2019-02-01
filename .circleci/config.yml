@@ -40,6 +40,23 @@ jobs:
     steps:
       - run: ls
 
+  master-webpage:
+    docker:
+      - image: warrensbox/go-rb-py-aws
+
+    steps:
+      - checkout
+      - run: 
+          command: |
+            git config user.email "warren.veerasingam@gmail.com"
+            git config user.name "warrensbox"
+            cd docs; bundle install --path vendor/bundler; bundle exec jekyll build -c _config.yml; cd ..
+            git checkout website
+            git pull origin website
+            git add .
+            git commit -m "Pushing ${CIRCLE_BUILD_NUM} from circle ci"
+            git push origin website
+
   release:
     docker:
       - image: circleci/golang:1.11
@@ -70,20 +87,6 @@ jobs:
             git push origin ${RELEASE_VERSION}
             curl -L https://git.io/goreleaser | VERSION=v0.76.1 bash
 
-  release-webpage:
-    docker:
-      - image: warrensbox/go-rb-py-aws
-
-    steps:
-      - checkout
-      - run: 
-          command: |
-            git config user.email "warren.veerasingam@gmail.com"
-            git config user.name "warrensbox"
-            cd docs; bundle install --path vendor/bundler; bundle exec jekyll build -c _config.yml; cd ..
-            git checkout master
-            git merge release
-
 workflows:
   version: 2
 
@@ -106,19 +109,21 @@ workflows:
               only: 
               - master
               - release
-      - release:
+      - master-webpage:
           requires:
             - test-ubuntu
             - test-alpine
           filters:
             branches:
               only: 
+              - master
               - release
-      - release-webpage:
+      - release:
           requires:
-            - release
+            - master-webpage
           filters:
             branches:
               only: 
               - release
+
 

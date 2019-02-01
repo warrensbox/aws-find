@@ -1,7 +1,7 @@
 # AWS Instance Finder 
 
-The `aws-find` command line tool lets you lookup AWS instances' IP address and ID by their tag name. 
-Once installed, the `aws-find` requires the tag name as an argument to the command [see example](#how-to-use). 
+The `aws-find` command line tool lets you lookup AWS instances' IP address and other information by their tag name. 
+Once installed, the `aws-find` requires the tag name and value as an argument to the command [see example](#how-to-use). 
 
 <hr>
 
@@ -15,7 +15,7 @@ Installation for MacOS is the easiest with Homebrew. [If you do not have homebre
 
 
 ```ruby
-brew install warrensbox/tap/aws-find
+brew install warrensbox/tap/awsfind
 ```
 
 ### Linux
@@ -34,17 +34,23 @@ Alternatively, you can install the binary from the source [here](https://github.
 
 ### How to use
 
-<img align="center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/awsfind.gif" alt="drawing" style="width: 480px;"/>
+<img align="center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/awsfindemo.gif" alt="drawing" style="width: 480px;" /> 
 
-1.  You can switch between different versions of terraform by typing the command `awsfind` on your terminal. 
-2.  Select the version of terraform you require by using the up and down arrow.
-3.  Hit **Enter** to select the desired version
+1. You can pass parameters to your `awsfind` command on your terminal
+2. Pass -t or --tag for the tag name. And, -n and --name for the tag value
+3. Hit **Enter** to see the list of instaces 
+
+ <img align="center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/awsfindemo1.gif" alt="drawing" style="width: 480px;" /> 
+
+1. Optionally, you don't have to pass any parameters to see the list of all the instances in region
+2. Pass -r or --region to specify another region 
+3. Hit **Enter** to see the list of instaces 
 
 <hr>
 
 ## Issues
 
-Please open  *issues* here: [New Issue](https://github.com/warrensbox/terraform-switcher/issues){:target="_blank"}
+Please open  *issues* here: [New Issue](https://github.com/warrensbox/aws-find/issues){:target="_blank"}
 
 <hr>
 
