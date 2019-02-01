@@ -40,23 +40,6 @@ jobs:
     steps:
       - run: ls
 
-  master-webpage:
-    docker:
-      - image: warrensbox/go-rb-py-aws
-
-    steps:
-      - checkout
-      - run: 
-          command: |
-            git config user.email "warren.veerasingam@gmail.com"
-            git config user.name "warrensbox"
-            cd docs; bundle install --path vendor/bundler; bundle exec jekyll build -c _config.yml; cd ..
-            git checkout website
-            git pull origin website
-            git add .
-            git commit -m "Pushing ${CIRCLE_BUILD_NUM} from circle ci"
-            git push origin website
-
   release:
     docker:
       - image: circleci/golang:1.11
@@ -109,18 +92,10 @@ workflows:
               only: 
               - master
               - release
-      - master-webpage:
+      - release:
           requires:
             - test-ubuntu
             - test-alpine
-          filters:
-            branches:
-              only: 
-              - master
-              - release
-      - release:
-          requires:
-            - master-webpage
           filters:
             branches:
               only: 
