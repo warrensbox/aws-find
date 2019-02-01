@@ -21,7 +21,7 @@ changelog:
     - '^docs:'
     - '^test:'
 archive:
-  name_template: '{{ .ProjectName }}_{{.Env.RELEASE_VERSION}}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}'
+  name_template: '{{ .Binary }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }'
   replacements:
     darwin: darwin
   format_overrides:
