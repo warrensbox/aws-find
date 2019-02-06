@@ -74,12 +74,12 @@ brew:
   # So you can `brew test` your formula.
   # Default is empty.
   test: |
-    system "#{bin}/awsfind --version"
+    system "#{bin}/aws-find --version"
 
   # Custom install script for brew.
   # Default is 'bin.install "program"'.
   install: |
-    bin.install "awsfind"
+    bin.install "aws-find"
 
 release:
   # Repo in which the release will be created.

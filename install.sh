@@ -5,7 +5,7 @@ set -e
 usage() {
   this=$1
   cat <<EOF
-$this: download go binaries for warrensbox/awsfind
+$this: download go binaries for warrensbox/aws-find
 
 Usage: $this [-b] bindir [-d] [tag]
   -b sets bindir or installation directory, Defaults to ./bin
@@ -46,7 +46,7 @@ execute() {
   srcdir="${tmpdir}"
   (cd "${tmpdir}" && untar "${TARBALL}")
   install -d "${BINDIR}"
-  for binexe in "awsfind" ; do
+  for binexe in "aws-find" ; do
     if [ "$OS" = "windows" ]; then
       binexe="${binexe}.exe"
     fi
@@ -337,7 +337,7 @@ EOF
 PROJECT_NAME="aws-find"
 OWNER=warrensbox
 REPO="aws-find"
-BINARY=awsfind
+BINARY=aws-find
 FORMAT=tar.gz
 OS=$(uname_os)
 ARCH=$(uname_arch)

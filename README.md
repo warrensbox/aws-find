@@ -7,16 +7,16 @@
 
 <img style="text-allign:center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/smallerlogo.png" alt="drawing" width="95" height="125"/>
 
-<!-- ![gopher](https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/awsfind/logo.png =100x20) -->
+<!-- ![gopher](https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/logo.png =100x20) -->
 
-The `awsfind` command line tool lets you lookup AWS instances'information by their tag name. 
-Once installed, the `awsfind` lets you provide the tag name and value as an argument to the command [see example](#how-to-use). 
+The `aws-find` command line tool lets you lookup AWS instances'information by their tag name. 
+Once installed, the `aws-find` lets you provide the tag name and value as an argument to the command [see example](#how-to-use). 
 
-See installation guide here: [awsfind installation](https://warrensbox.github.io/aws-find/)
+See installation guide here: [aws-find installation](https://warrensbox.github.io/aws-find/)
 
 ## Installation
 
-`awsfind` is available for MacOS and Linux based operating systems.
+`aws-find` is available for MacOS and Linux based operating systems.
 
 ### Homebrew
 
@@ -24,7 +24,7 @@ Installation for MacOS is the easiest with Homebrew. [If you do not have homebre
 
 
 ```ruby
-brew install warrensbox/tap/awsfind
+brew install warrensbox/tap/aws-find
 ```
 
 ### Linux
@@ -41,14 +41,14 @@ Alternatively, you can install the binary from source [here](https://github.com/
 
 ## How to use:
 ### Pass parameters optional
-<img align="center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/awsfindemo.gif" alt="drawing" style="width: 480px;" /> 
+<img align="center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/aws-findemo.gif" alt="drawing" style="width: 480px;" /> 
 
-1. You can pass parameters to your `awsfind` command on your terminal. 
+1. You can pass parameters to your `aws-find` command on your terminal. 
 2. Pass -t or --tag for the tag name. And, -n and --name for the tag value. 
 3. Hit **Enter** to see the list of instaces 
 
 ### Without parameters
- <img align="center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/awsfindemo1.gif" alt="drawing" style="width: 480px;" /> 
+ <img align="center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/aws-findemo1.gif" alt="drawing" style="width: 480px;" /> 
 
 1. Optionally, you don't have to pass any parameters to see the list of all the instances in region.</li>
 2. Pass -r or --region to specify another region</li>

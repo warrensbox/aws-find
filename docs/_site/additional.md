@@ -6,7 +6,7 @@
 ### Homebrew
 
 ```ruby
-brew upgrade warrensbox/tap/awsfind
+brew upgrade warrensbox/tap/aws-find
 ```
 ### Linux
 
@@ -21,14 +21,14 @@ curl -L https://raw.githubusercontent.com/warrensbox/terraform-switcher/release/
 ### Homebrew
 
 ```ruby
-brew uninstall warrensbox/tap/awsfind
+brew uninstall warrensbox/tap/aws-find
 ```
 ### Linux
 
 Rerun:
 
 ```sh
-rm /usr/local/bin/awsfind
+rm /usr/local/bin/aws-find
 ```
 
 ## Troubleshoot:
@@ -45,7 +45,7 @@ install: can't change permissions of /usr/local/bin: Operation not permitted
 ```ruby
 "Unable to create symlink. You must have SUDO privileges"
 ```
-You probably need to have **sudo** privileges to install *awsfind*.
+You probably need to have **sudo** privileges to install *aws-find*.
 
 [Back to top](#upgrade)    
 [Back to main](index)

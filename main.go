@@ -36,7 +36,7 @@ func init() {
 
 	const (
 		cmdDesc         = "Look the IP addresses and instance IDs by their tag name in AWS"
-		versionFlagDesc = "Displays the version of awsfind"
+		versionFlagDesc = "Displays the version of aws-find"
 		awsRegionDesc   = "Provide AWS Region. Default is us-east-1"
 		tagNameDesc     = "Provide AWS Tag name"
 		tagValueDesc    = "Provide AWS Tag value"
