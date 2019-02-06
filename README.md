@@ -9,7 +9,7 @@
 
 <!-- ![gopher](https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/awsfind/logo.png =100x20) -->
 
-The `awsfind` command line tool lets you lookup AWS instances' IP address and other information by their tag name. 
+The `awsfind` command line tool lets you lookup AWS instances'information by their tag name. 
 Once installed, the `awsfind` lets you provide the tag name and value as an argument to the command [see example](#how-to-use). 
 
 See installation guide here: [awsfind installation](https://warrensbox.github.io/aws-find/)
@@ -40,13 +40,14 @@ curl -L https://raw.githubusercontent.com/warrensbox/aws-find/release/install.sh
 Alternatively, you can install the binary from source [here](https://github.com/warrensbox/aws-find/releases) 
 
 ## How to use:
-### Use dropdown menu to select version
+### Pass parameters optional
 <img align="center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/awsfindemo.gif" alt="drawing" style="width: 480px;" /> 
 
 1. You can pass parameters to your `awsfind` command on your terminal. 
 2. Pass -t or --tag for the tag name. And, -n and --name for the tag value. 
 3. Hit **Enter** to see the list of instaces 
 
+### Without parameters
  <img align="center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/awsfindemo1.gif" alt="drawing" style="width: 480px;" /> 
 
 1. Optionally, you don't have to pass any parameters to see the list of all the instances in region.</li>
