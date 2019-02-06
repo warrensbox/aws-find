@@ -45,7 +45,7 @@ func init() {
 	versionFlag = kingpin.Flag("version", versionFlagDesc).Short('v').Bool()
 	awsRegion = kingpin.Flag("region", awsRegionDesc).Short('r').String()
 	tagName = kingpin.Flag("tag", tagNameDesc).Short('T').String()
-	tagValue = kingpin.Flag("val", tagValueDesc).Short('V').String()
+	tagValue = kingpin.Flag("value", tagValueDesc).Short('V').String()
 
 }
 

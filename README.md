@@ -44,7 +44,7 @@ Alternatively, you can install the binary from source [here](https://github.com/
 <img align="center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/aws-findemo.gif" alt="drawing" style="width: 480px;" /> 
 
 1. You can pass parameters to your `aws-find` command on your terminal. 
-2. Pass -t or --tag for the tag name. And, -n and --name for the tag value. 
+2. Pass -T or --tag for the tag name. And, -V and --value for the tag value. 
 3. Hit **Enter** to see the list of instaces 
 
 ### Without parameters
