@@ -34,14 +34,14 @@ Alternatively, you can install the binary from the source [here](https://github.
 
 ### How to use
 ### Pass parameters optional
-<img align="center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/aws-findemo.gif" alt="drawing" style="width: 480px;" /> 
+<img align="center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/aws-find-demo1.gif" alt="drawing" width="480" /> 
 
 1. You can pass parameters to your `aws-find` command on your terminal. 
 2. Pass -T or --tag for the tag name. And, -V and --value for the tag value. 
 3. Hit **Enter** to see the list of instaces 
 
 ### Without parameters
- <img align="center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/aws-findemo1.gif" alt="drawing" style="width: 480px;" /> 
+ <img align="center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/aws-find-demo2.gif" alt="drawing" width="480" /> 
 
 1. Optionally, you don't have to pass any parameters to see the list of all the instances in region
 2. Pass -r or --region to specify another region 
