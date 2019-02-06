@@ -16,29 +16,11 @@ jobs:
             go vet -tests=false ./...
             go test -v ./...
             mkdir -p build
-            go build -v -o build/awsfind
+            go build -v -o build/aws-find
 
       - persist_to_workspace:
           root: build
-          paths: awsfind
-
-  test-ubuntu:
-    docker:
-      - image: "circleci/ubuntu-server"
-
-    steps:
-    
-      - run: ls
-
-      - attach_workspace:
-          at: build
-
-  test-alpine:
-    docker:
-      - image: "mhart/alpine-node"
-
-    steps:
-      - run: ls
+          paths: aws-find
 
   release:
     docker:
@@ -53,7 +35,7 @@ jobs:
             go vet -tests=false ./...
             go test -v ./...
             mkdir -p build
-            go build -v -o build/awsfind
+            go build -v -o build/aws-find
             source version
             export RELEASE_VERSION; 
             RELEASE_VERSION=$RELEASE_VERSION.${CIRCLE_BUILD_NUM}
@@ -76,26 +58,9 @@ workflows:
   build_and_test:
     jobs:
       - build
-      - test-ubuntu:
-          requires:
-            - build
-          filters:
-            branches:
-              only: 
-              - master
-              - release
-      - test-alpine:
-          requires:
-            - build
-          filters:
-            branches:
-              only: 
-              - master
-              - release
       - release:
           requires:
-            - test-ubuntu
-            - test-alpine
+            - build
           filters:
             branches:
               only: 

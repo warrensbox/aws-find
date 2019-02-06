@@ -1,45 +1,52 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title> AWS Instance Finder | awsfind </title>
+      <title> AWS Instance Finder | aws-find </title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     
-        <meta name="description" content="">
-    
-<!-- Begin Jekyll SEO tag v2.4.0 -->
+    <meta name="description" content="">
+
+
+    <link rel="icon" type="image/png" href="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/favicon_aws-find_16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/favicon_aws-find_32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/favicon_aws-find_32.png" sizes="48x48">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
 <title>AWS Instance Finder | Lookup AWS instances’ IP address and ID by their AWS tag name</title>
-<meta name="generator" content="Jekyll v3.7.3" />
+<meta name="generator" content="Jekyll v3.7.4" />
 <meta property="og:title" content="AWS Instance Finder" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Lookup AWS instances’ IP address and ID by their AWS tag name" />
 <meta property="og:description" content="Lookup AWS instances’ IP address and ID by their AWS tag name" />
 <meta property="og:site_name" content="AWS Instance Finder" />
 <script type="application/ld+json">
-{"headline":"AWS Instance Finder","url":"/additional.html","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/assets/img/logo.png"}},"description":"Lookup AWS instances’ IP address and ID by their AWS tag name","@type":"WebPage","@context":"http://schema.org"}</script>
+{"description":"Lookup AWS instances’ IP address and ID by their AWS tag name","@type":"WebPage","url":"/additional.html","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/assets/img/logo.png"}},"headline":"AWS Instance Finder","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=4351d587be3c0f8fafc92a896f8699c7c84a41a1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=432fe841b8a0fc34c5948920ee22b9f56e0bb306">
     <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120055973-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+       <!-- Global site tag (gtag.js) - Google Analytics aws-find -->
+       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120055973-6"></script>
+       <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+   
+         gtag('config', 'UA-120055973-6');
+       </script>
 
-      gtag('config', 'UA-120055973-1');
-    </script>
   </head>
   <body>
     <div class="wrapper">
       <header>
         <!-- <h1 style="font-size:25px;"><a href="/">AWS Instance Finder</a></h1> -->
-        <!-- <h1 style="font-size:25px; text-align: center"><a href="/">awsfind</a></h1> -->
+        <!-- <h1 style="font-size:25px; text-align: center"><a href="/">tgswitch</a></h1> -->
 
         <p align="center">
           <img align="middle" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/logo.png" alt="Logo" />
@@ -47,21 +54,21 @@
 
         <p style="text-align: center">Lookup AWS instances' IP address and ID by their AWS tag name</p>
         <!-- <p>Written in go</p> -->
-        <img src="https://travis-ci.org/warrensbox/terraform-switcher.svg?branch=master" alt="Travis" />
-        <img src="https://goreportcard.com/badge/github.com/warrensbox/terraform-switcher" alt="Go Report" />
+        <img src="https://travis-ci.org/warrensbox/aws-find.svg?branch=master" alt="Travis" />
+        <img src="https://goreportcard.com/badge/github.com/warrensbox/aws-find" alt="Go Report" />
 
         <hr style="margin-top: 20px;">
 
         
         <ul>
-          <li><a href="https://github.com/warrensbox/terraform-switcher/releases/download/0.1.215/terraform-switcher_0.1.215_darwin_amd64.tar.gz">Download <strong>MacOS</strong></a></li>
-          <li><a href="https://github.com/warrensbox/terraform-switcher/releases/download/0.1.215/terraform-switcher_0.1.215_linux_amd64.tar.gz">Download <strong>Linux</strong></a></li>
-          <li><a href="https://github.com/warrensbox/terraform-switcher/releases">Releases On <strong>GitHub</strong></a></li>
+          <li><a href="https://github.com/warrensbox/aws-find/releases/download/0.1.455/aws-find_0.1.455_darwin_amd64.tar.gz">Download <strong>MacOS</strong></a></li>
+          <li><a href="https://github.com/warrensbox/aws-find/releases/download/0.1.455/aws-find_0.1.455_linux_amd64.tar.gz">Download <strong>Linux</strong></a></li>
+          <li><a href="https://github.com/warrensbox/aws-find/releases">Releases On <strong>GitHub</strong></a></li>
         </ul>
         
       </header>
       <section>
-
+        
       
 <p><a href="index">Back to main</a></p>
 
@@ -69,7 +76,7 @@
 
 <h3 id="homebrew">Homebrew</h3>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">brew</span> <span class="n">upgrade</span> <span class="n">warrensbox</span><span class="o">/</span><span class="n">tap</span><span class="o">/</span><span class="n">awsfind</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">brew</span> <span class="n">upgrade</span> <span class="n">warrensbox</span><span class="o">/</span><span class="n">tap</span><span class="o">/</span><span class="n">aws</span><span class="o">-</span><span class="n">find</span>
 </code></pre></div></div>
 <h3 id="linux">Linux</h3>
 
@@ -82,13 +89,13 @@
 
 <h3 id="homebrew-1">Homebrew</h3>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">brew</span> <span class="n">uninstall</span> <span class="n">warrensbox</span><span class="o">/</span><span class="n">tap</span><span class="o">/</span><span class="n">awsfind</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">brew</span> <span class="n">uninstall</span> <span class="n">warrensbox</span><span class="o">/</span><span class="n">tap</span><span class="o">/</span><span class="n">aws</span><span class="o">-</span><span class="n">find</span>
 </code></pre></div></div>
 <h3 id="linux-1">Linux</h3>
 
 <p>Rerun:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm /usr/local/bin/awsfind
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm /usr/local/bin/aws-find
 </code></pre></div></div>
 
 <h2 id="troubleshoot">Troubleshoot:</h2>
@@ -102,18 +109,18 @@
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"Unable to create symlink. You must have SUDO privileges"</span>
 </code></pre></div></div>
-<p>You probably need to have <strong>sudo</strong> privileges to install <em>awsfind</em>.</p>
+<p>You probably need to have <strong>sudo</strong> privileges to install <em>aws-find</em>.</p>
 
 <p><a href="#upgrade">Back to top</a>  <br />
 <a href="index">Back to main</a></p>
 
       
-      <p><small>This project is maintained by <a href="http://github.com/warrensbox">warrensbox</a></small></p>
+      <p><small>This project is maintained by <a href="http://github.com/warrensbox/aws-find">warrensbox</a></small></p>
       
       </section>
       <footer>
         <!-- <p><small>View other products &mdash; by <a href="http://warren.veerasingam.com/#about_me" target="_blank">Warren Veerasingam</a></small></p> -->
-        <p><small>This project is maintained by <a href="http://github.com/warrensbox">warrensbox</a></small></p>
+        <!-- <p><small>This project is maintained by <a href="http://github.com/warrensbox"></a></small></p> -->
       </footer>
     </div>
     <script src="/assets/js/scale.fix.js"></script>

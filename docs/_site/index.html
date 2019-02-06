@@ -1,45 +1,52 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title> AWS Instance Finder | awsfind </title>
+      <title> AWS Instance Finder | aws-find </title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     
-        <meta name="description" content="">
-    
-<!-- Begin Jekyll SEO tag v2.4.0 -->
+    <meta name="description" content="">
+
+
+    <link rel="icon" type="image/png" href="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/favicon_aws-find_16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/favicon_aws-find_32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/favicon_aws-find_32.png" sizes="48x48">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
 <title>AWS Instance Finder | Lookup AWS instances’ IP address and ID by their AWS tag name</title>
-<meta name="generator" content="Jekyll v3.7.3" />
+<meta name="generator" content="Jekyll v3.7.4" />
 <meta property="og:title" content="AWS Instance Finder" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Lookup AWS instances’ IP address and ID by their AWS tag name" />
 <meta property="og:description" content="Lookup AWS instances’ IP address and ID by their AWS tag name" />
 <meta property="og:site_name" content="AWS Instance Finder" />
 <script type="application/ld+json">
-{"headline":"AWS Instance Finder","url":"/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/assets/img/logo.png"}},"name":"AWS Instance Finder","description":"Lookup AWS instances’ IP address and ID by their AWS tag name","@type":"WebSite","@context":"http://schema.org"}</script>
+{"name":"AWS Instance Finder","description":"Lookup AWS instances’ IP address and ID by their AWS tag name","@type":"WebSite","url":"/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/assets/img/logo.png"}},"headline":"AWS Instance Finder","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=4351d587be3c0f8fafc92a896f8699c7c84a41a1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=432fe841b8a0fc34c5948920ee22b9f56e0bb306">
     <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120055973-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+       <!-- Global site tag (gtag.js) - Google Analytics aws-find -->
+       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120055973-6"></script>
+       <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+   
+         gtag('config', 'UA-120055973-6');
+       </script>
 
-      gtag('config', 'UA-120055973-1');
-    </script>
   </head>
   <body>
     <div class="wrapper">
       <header>
         <!-- <h1 style="font-size:25px;"><a href="/">AWS Instance Finder</a></h1> -->
-        <!-- <h1 style="font-size:25px; text-align: center"><a href="/">awsfind</a></h1> -->
+        <!-- <h1 style="font-size:25px; text-align: center"><a href="/">tgswitch</a></h1> -->
 
         <p align="center">
           <img align="middle" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/logo.png" alt="Logo" />
@@ -47,24 +54,24 @@
 
         <p style="text-align: center">Lookup AWS instances' IP address and ID by their AWS tag name</p>
         <!-- <p>Written in go</p> -->
-        <img src="https://travis-ci.org/warrensbox/terraform-switcher.svg?branch=master" alt="Travis" />
-        <img src="https://goreportcard.com/badge/github.com/warrensbox/terraform-switcher" alt="Go Report" />
+        <img src="https://travis-ci.org/warrensbox/aws-find.svg?branch=master" alt="Travis" />
+        <img src="https://goreportcard.com/badge/github.com/warrensbox/aws-find" alt="Go Report" />
 
         <hr style="margin-top: 20px;">
 
         
         <ul>
-          <li><a href="https://github.com/warrensbox/terraform-switcher/releases/download/0.1.215/terraform-switcher_0.1.215_darwin_amd64.tar.gz">Download <strong>MacOS</strong></a></li>
-          <li><a href="https://github.com/warrensbox/terraform-switcher/releases/download/0.1.215/terraform-switcher_0.1.215_linux_amd64.tar.gz">Download <strong>Linux</strong></a></li>
-          <li><a href="https://github.com/warrensbox/terraform-switcher/releases">Releases On <strong>GitHub</strong></a></li>
+          <li><a href="https://github.com/warrensbox/aws-find/releases/download/0.1.455/aws-find_0.1.455_darwin_amd64.tar.gz">Download <strong>MacOS</strong></a></li>
+          <li><a href="https://github.com/warrensbox/aws-find/releases/download/0.1.455/aws-find_0.1.455_linux_amd64.tar.gz">Download <strong>Linux</strong></a></li>
+          <li><a href="https://github.com/warrensbox/aws-find/releases">Releases On <strong>GitHub</strong></a></li>
         </ul>
         
       </header>
       <section>
-
+        
       <h1 id="aws-instance-finder">AWS Instance Finder</h1>
 
-<p>The <code class="highlighter-rouge">aws-find</code> command line tool lets you lookup AWS instances’ IP address and other information by their tag name. 
+<p>The <code class="highlighter-rouge">aws-find</code> command line tool lets you lookup AWS instances’information by their tag name. 
 Once installed, the <code class="highlighter-rouge">aws-find</code> requires the tag name and value as an argument to the command <a href="#how-to-use">see example</a>.</p>
 
 <hr />
@@ -77,7 +84,7 @@ Once installed, the <code class="highlighter-rouge">aws-find</code> requires the
 
 <p>Installation for MacOS is the easiest with Homebrew. <a href="https://brew.sh/" target="_blank">If you do not have homebrew installed, click here</a>.</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">brew</span> <span class="n">install</span> <span class="n">warrensbox</span><span class="o">/</span><span class="n">tap</span><span class="o">/</span><span class="n">awsfind</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">brew</span> <span class="n">install</span> <span class="n">warrensbox</span><span class="o">/</span><span class="n">tap</span><span class="o">/</span><span class="n">aws</span><span class="o">-</span><span class="n">find</span>
 </code></pre></div></div>
 
 <h3 id="linux">Linux</h3>
@@ -95,15 +102,15 @@ Once installed, the <code class="highlighter-rouge">aws-find</code> requires the
 
 <h3 id="how-to-use">How to use</h3>
 
-<p><img align="center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/awsfindemo.gif" alt="drawing" style="width: 480px;" /></p>
+<p><img align="center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/aws-findemo.gif" alt="drawing" style="width: 480px;" /></p>
 
 <ol>
-  <li>You can pass parameters to your <code class="highlighter-rouge">awsfind</code> command on your terminal</li>
-  <li>Pass -t or –tag for the tag name. And, -n and –name for the tag value</li>
+  <li>You can pass parameters to your <code class="highlighter-rouge">aws-find</code> command on your terminal.</li>
+  <li>Pass -T or –tag for the tag name. And, -V and –value for the tag value.</li>
   <li>Hit <strong>Enter</strong> to see the list of instaces</li>
 </ol>
 
-<p><img align="center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/awsfindemo1.gif" alt="drawing" style="width: 480px;" /></p>
+<p><img align="center" src="https://s3.us-east-2.amazonaws.com/kepler-images/warrensbox/aws-find/aws-findemo1.gif" alt="drawing" style="width: 480px;" /></p>
 
 <ol>
   <li>Optionally, you don’t have to pass any parameters to see the list of all the instances in region</li>
@@ -123,12 +130,12 @@ Once installed, the <code class="highlighter-rouge">aws-find</code> requires the
 <a href="additional">Additional Info</a></p>
 
       
-      <p><small>This project is maintained by <a href="http://github.com/warrensbox">warrensbox</a></small></p>
+      <p><small>This project is maintained by <a href="http://github.com/warrensbox/aws-find">warrensbox</a></small></p>
       
       </section>
       <footer>
         <!-- <p><small>View other products &mdash; by <a href="http://warren.veerasingam.com/#about_me" target="_blank">Warren Veerasingam</a></small></p> -->
-        <p><small>This project is maintained by <a href="http://github.com/warrensbox">warrensbox</a></small></p>
+        <!-- <p><small>This project is maintained by <a href="http://github.com/warrensbox"></a></small></p> -->
       </footer>
     </div>
     <script src="/assets/js/scale.fix.js"></script>

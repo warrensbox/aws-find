@@ -36,7 +36,7 @@ func init() {
 
 	const (
 		cmdDesc         = "Look the IP addresses and instance IDs by their tag name in AWS"
-		versionFlagDesc = "Displays the version of awsfind"
+		versionFlagDesc = "Displays the version of aws-find"
 		awsRegionDesc   = "Provide AWS Region. Default is us-east-1"
 		tagNameDesc     = "Provide AWS Tag name"
 		tagValueDesc    = "Provide AWS Tag value"
@@ -44,8 +44,8 @@ func init() {
 
 	versionFlag = kingpin.Flag("version", versionFlagDesc).Short('v').Bool()
 	awsRegion = kingpin.Flag("region", awsRegionDesc).Short('r').String()
-	tagName = kingpin.Flag("tag", tagNameDesc).Short('t').String()
-	tagValue = kingpin.Flag("name", tagValueDesc).Short('n').String()
+	tagName = kingpin.Flag("tag", tagNameDesc).Short('T').String()
+	tagValue = kingpin.Flag("value", tagValueDesc).Short('V').String()
 
 }
 

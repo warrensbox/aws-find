@@ -38,7 +38,7 @@ func FindEC2(sess *session.Session, id *modal.InstanceProfile, ch chan string) {
 	resp, err := svc.DescribeInstances(params)
 	CheckError("Can't find instance in region", err)
 
-	var instances [][]string
+	var instances [][]interface{}
 	reservations := resp.Reservations
 
 	//fmt.Println(reservations)
@@ -54,7 +54,7 @@ func FindEC2(sess *session.Session, id *modal.InstanceProfile, ch chan string) {
 		for _, w := range instance.Instances {
 
 			numberOfInst++
-			var arr []string
+			var arr []interface{}
 			arr = append(arr, fmt.Sprintf("%d", numberOfInst)) //Number of instances
 			arr = append(arr, FindTags(w.Tags, "Name"))        //Name
 			arr = append(arr, *w.InstanceId)                   //InstanceID
@@ -76,7 +76,7 @@ func FindEC2(sess *session.Session, id *modal.InstanceProfile, ch chan string) {
 	ch <- printInstance(instances)
 }
 
-func printInstance(instances [][]string) string {
+func printInstance(instances [][]interface{}) string {
 
 	t := table.NewWriter()
 	t.SetOutputMirror(os.Stdout)
@@ -87,9 +87,14 @@ func printInstance(instances [][]string) string {
 		return "No instances found..."
 	} else {
 		t.AppendHeader(table.Row{"#", "Name", "Instance ID", "State", "Private IP", "Type", "AZ Zone", "Role"})
+
 		for _, profile := range instances {
-			t.AppendRow([]interface{}{profile[0], profile[1], profile[2], profile[3], profile[4], profile[5], profile[6], profile[7]})
+			t.AppendRow(profile)
 		}
+
+		// for _, profile := range instances {
+		// 	t.AppendRow([]interface{}{profile[0], profile[1], profile[2], profile[3], profile[4], profile[5], profile[6], profile[7]})
+		// }
 		t.SetStyle(table.StyleLight)
 		t.Render()
 		return "Found instances"

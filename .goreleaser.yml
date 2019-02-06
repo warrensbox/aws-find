@@ -19,7 +19,7 @@ changelog:
     - '^docs:'
     - '^test:'
 archive:
-  name_template: '{{ .Binary }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}'
+  name_template: '{{ .ProjectName }}_{{.Env.RELEASE_VERSION}}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}'
   replacements:
     darwin: darwin
   format_overrides:
@@ -28,7 +28,7 @@ archive:
 brew:
   # Name of the recipe
   # Default to project name
-  name: awsfind
+  name: aws-find
 
   # Reporitory to push the tap to.
   github:
@@ -51,7 +51,7 @@ brew:
 
   # Caveats for the user of your binary.
   # Default is empty.
-  caveats: "Type 'awsfind' on your command line and choose the terragrunt version that you want from the dropdown. This command currently only works on MacOs and Linux"
+  caveats: "Type 'aws-find' on your command line and choose the terragrunt version that you want from the dropdown. This command currently only works on MacOs and Linux"
 
   # Your app's homepage.
   # Default is empty.
@@ -59,7 +59,7 @@ brew:
 
   # Your app's description.
   # Default is empty.
-  description: "The awsfind command lets you switch between terragrunt versions."
+  description: "The aws-find command lets you switch between terragrunt versions."
 
   # Setting this will prevent goreleaser to actually try to commit the updated
   # formula - instead, the formula file will be stored on the dist folder only,
@@ -74,12 +74,12 @@ brew:
   # So you can `brew test` your formula.
   # Default is empty.
   test: |
-    system "#{bin}/awsfind --version"
+    system "#{bin}/aws-find --version"
 
   # Custom install script for brew.
   # Default is 'bin.install "program"'.
   install: |
-    bin.install "awsfind"
+    bin.install "aws-find"
 
 release:
   # Repo in which the release will be created.
