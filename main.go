@@ -30,6 +30,7 @@ var (
 	awsRegion   *string
 	tagName     *string
 	tagValue    *string
+	services    *string
 )
 
 func init() {
@@ -37,6 +38,7 @@ func init() {
 	const (
 		cmdDesc         = "Look the IP addresses and instance IDs by their tag name in AWS"
 		versionFlagDesc = "Displays the version of aws-find"
+		servicesArgDesc = "Provide service(s) to be queried. Ex: ec2,alb,rds,sg. Default: ec2"
 		awsRegionDesc   = "Provide AWS Region. Default is us-east-1"
 		tagNameDesc     = "Provide AWS Tag name"
 		tagValueDesc    = "Provide AWS Tag value"
@@ -44,6 +46,7 @@ func init() {
 
 	versionFlag = kingpin.Flag("version", versionFlagDesc).Short('v').Bool()
 	awsRegion = kingpin.Flag("region", awsRegionDesc).Short('r').String()
+	services = kingpin.Arg("services", servicesArgDesc).String()
 	tagName = kingpin.Flag("tag", tagNameDesc).Short('T').String()
 	tagValue = kingpin.Flag("value", tagValueDesc).Short('V').String()
 
@@ -55,11 +58,7 @@ func main() {
 
 	config := &aws.Config{Region: aws.String(*awsRegion)}
 
-	//sess, err := session.NewSession(config)
-
 	session := session.Must(session.NewSession(config))
-	//svc := ssm.New(session)
-	//lib.CheckError("Can't create aws session", err)
 
 	t := &modal.InstanceProfile{
 		TagName:  *tagName,
@@ -70,6 +69,9 @@ func main() {
 
 	if *versionFlag {
 		fmt.Printf("\nVersion: %v\n", version)
+	} else if *services != "" {
+		fmt.Println("Printing services")
+
 	} else {
 		go lib.FindEC2(session, t, ch)
 		<-ch
