@@ -14,11 +14,12 @@ package main
 
 import (
 	"fmt"
+	"strings"
+	"time"
 
 	"github.com/aws/aws-sdk-go/aws"
 	session "github.com/aws/aws-sdk-go/aws/session"
 	"github.com/warrensbox/aws-find/lib"
-	"github.com/warrensbox/aws-find/modal"
 	kingpin "gopkg.in/alecthomas/kingpin.v2"
 )
 
@@ -60,21 +61,47 @@ func main() {
 
 	session := session.Must(session.NewSession(config))
 
-	t := &modal.InstanceProfile{
-		TagName:  *tagName,
-		TagValue: *tagValue,
-	}
+	construct := &lib.Constructor{*tagName, *tagValue, session}
+	profile, _ := lib.NewConstructor(construct)
 
 	ch := make(chan string)
 
 	if *versionFlag {
 		fmt.Printf("\nVersion: %v\n", version)
 	} else if *services != "" {
-		fmt.Println("Printing services")
+		if strings.Contains(*services, ",") {
+			result := strings.Split(*services, ",")
 
+			service := make(map[string]struct{})
+			for _, s := range result {
+				service[s] = struct{}{}
+			}
+
+			if serviceExist(service, "ec2") {
+				fmt.Println("this")
+				time.Sleep(100000000)
+			}
+			if serviceExist(service, "rds") {
+				fmt.Println("this too")
+				time.Sleep(10000000)
+			}
+			if serviceExist(service, "alb") {
+				profile.FindALB(ch)
+			}
+
+		}
 	} else {
-		go lib.FindEC2(session, t, ch)
+		go profile.FindEC2(ch)
 		<-ch
 	}
 
+}
+
+func serviceExist(services map[string]struct{}, item string) bool {
+	exist := false
+	if _, ok := services[item]; ok {
+		exist = true
+	}
+
+	return exist
 }
