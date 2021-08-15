@@ -64,6 +64,9 @@ See how to *upgrade*, *uninstall*, *troubleshoot* here:[More info](https://warre
 Please open  *issues* here: [New Issue](https://github.com/warrensbox/aws-find/issues)
 
 
+## Update 08/13/21
+More test needed - new arn format
+
 
 
 

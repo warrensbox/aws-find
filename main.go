@@ -14,11 +14,12 @@ package main
 
 import (
 	"fmt"
+	"strings"
+	"time"
 
 	"github.com/aws/aws-sdk-go/aws"
 	session "github.com/aws/aws-sdk-go/aws/session"
 	"github.com/warrensbox/aws-find/lib"
-	"github.com/warrensbox/aws-find/modal"
 	kingpin "gopkg.in/alecthomas/kingpin.v2"
 )
 
@@ -30,6 +31,7 @@ var (
 	awsRegion   *string
 	tagName     *string
 	tagValue    *string
+	services    *string
 )
 
 func init() {
@@ -37,6 +39,7 @@ func init() {
 	const (
 		cmdDesc         = "Look the IP addresses and instance IDs by their tag name in AWS"
 		versionFlagDesc = "Displays the version of aws-find"
+		servicesArgDesc = "Provide service(s) to be queried. Ex: ec2,alb,rds,sg. Default: ec2"
 		awsRegionDesc   = "Provide AWS Region. Default is us-east-1"
 		tagNameDesc     = "Provide AWS Tag name"
 		tagValueDesc    = "Provide AWS Tag value"
@@ -44,6 +47,7 @@ func init() {
 
 	versionFlag = kingpin.Flag("version", versionFlagDesc).Short('v').Bool()
 	awsRegion = kingpin.Flag("region", awsRegionDesc).Short('r').String()
+	services = kingpin.Arg("services", servicesArgDesc).String()
 	tagName = kingpin.Flag("tag", tagNameDesc).Short('T').String()
 	tagValue = kingpin.Flag("value", tagValueDesc).Short('V').String()
 
@@ -55,24 +59,49 @@ func main() {
 
 	config := &aws.Config{Region: aws.String(*awsRegion)}
 
-	//sess, err := session.NewSession(config)
-
 	session := session.Must(session.NewSession(config))
-	//svc := ssm.New(session)
-	//lib.CheckError("Can't create aws session", err)
 
-	t := &modal.InstanceProfile{
-		TagName:  *tagName,
-		TagValue: *tagValue,
-	}
+	construct := &lib.Constructor{*tagName, *tagValue, session}
+	profile, _ := lib.NewConstructor(construct)
 
 	ch := make(chan string)
 
 	if *versionFlag {
 		fmt.Printf("\nVersion: %v\n", version)
+	} else if *services != "" {
+		if strings.Contains(*services, ",") {
+			result := strings.Split(*services, ",")
+
+			service := make(map[string]struct{})
+			for _, s := range result {
+				service[s] = struct{}{}
+			}
+
+			if serviceExist(service, "ec2") {
+				fmt.Println("this")
+				time.Sleep(100000000)
+			}
+			if serviceExist(service, "rds") {
+				fmt.Println("this too")
+				time.Sleep(10000000)
+			}
+			if serviceExist(service, "alb") {
+				profile.FindALB(ch)
+			}
+
+		}
 	} else {
-		go lib.FindEC2(session, t, ch)
+		go profile.FindEC2(ch)
 		<-ch
 	}
 
+}
+
+func serviceExist(services map[string]struct{}, item string) bool {
+	exist := false
+	if _, ok := services[item]; ok {
+		exist = true
+	}
+
+	return exist
 }
